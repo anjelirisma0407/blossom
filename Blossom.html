@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="id" data-theme="light" class="pt-[env(safe-area-inset-top,0px)] pb-[env(safe-area-inset-bottom,0px)] [&::-webkit-scrollbar]:hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Blossom — Fashion Wanita</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#fff8f2",
+              "pink-soft": "#f9dce3",
+              pink: "#efa3b7",
+              "pink-deep": "#d96c89",
+              ink: "#3b2a30",
+              muted: "#8b7378",
+              line: "rgba(59,42,48,0.12)",
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', "serif"],
+              sans: ['"Manrope"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream font-sans text-ink leading-relaxed overflow-x-hidden">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 pt-[env(safe-area-inset-top,0px)] bg-cream/90 backdrop-blur-md border-b border-line">
+      <div class="flex items-center justify-between gap-4 flex-wrap px-5 py-3.5 sm:px-8 sm:py-5">
+        <div class="font-serif text-2xl sm:text-[28px] font-semibold text-pink-deep">Blossom<span class="italic font-medium text-pink">.</span></div>
+
+        <nav class="[scrollbar-width:none] [&::-webkit-scrollbar]:hidden order-3 sm:order-none flex gap-5 sm:gap-9 text-sm font-medium whitespace-nowrap overflow-x-auto w-full sm:w-auto pt-3 sm:pt-0 mt-1 sm:mt-0 border-t sm:border-t-0 border-line">
+          <a href="#" class="relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-pink-deep after:rounded-sm after:transition-[width] after:duration-[250ms] after:ease-[ease] motion-reduce:after:transition-none hover:after:w-full [&.active]:after:w-full active py-1 text-pink-deep">Home</a>
+          <a href="#shop" class="relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-pink-deep after:rounded-sm after:transition-[width] after:duration-[250ms] after:ease-[ease] motion-reduce:after:transition-none hover:after:w-full [&.active]:after:w-full py-1 hover:text-pink-deep">Shop</a>
+          <a href="#newin" class="relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-pink-deep after:rounded-sm after:transition-[width] after:duration-[250ms] after:ease-[ease] motion-reduce:after:transition-none hover:after:w-full [&.active]:after:w-full py-1 hover:text-pink-deep">New In</a>
+          <a href="#bestseller" class="relative after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-0.5 after:bg-pink-deep after:rounded-sm after:transition-[width] after:duration-[250ms] after:ease-[ease] motion-reduce:after:transition-none hover:after:w-full [&.active]:after:w-full py-1 hover:text-pink-deep">Best Seller</a>
+        </nav>
+
+        <div class="flex items-center gap-4 sm:gap-5 text-lg">
+          <button class="bg-transparent border-none cursor-pointer text-inherit" aria-label="Cari" onclick="openBox('search')">🔍</button>
+          <button class="bg-transparent border-none cursor-pointer text-inherit" aria-label="Akun" onclick="openBox('account')">👤</button>
+          <button class="relative bg-transparent border-none cursor-pointer text-inherit" aria-label="Favorit" onclick="openBox('wishlist')">
+            ♡<span id="wishBadge" class="hidden absolute -top-2 -right-2.5 bg-pink-deep text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-sans">0</span>
+          </button>
+          <button class="relative bg-transparent border-none cursor-pointer text-inherit" aria-label="Keranjang" onclick="openCart()">
+            🛍<span id="cartBadge" class="hidden absolute -top-2 -right-2.5 bg-pink-deep text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-sans">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="max-w-[1180px] mx-auto px-5 sm:px-8">
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center pt-10 md:pt-[76px] pb-16 md:pb-24">
+        <div>
+          <div class="text-pink-deep text-sm font-semibold mb-4">KOLEKSI TERBARU 2026</div>
+          <h1 class="font-serif font-semibold text-[44px] sm:text-[56px] lg:text-[72px] leading-[1.02] text-ink">Cantik itu,<br /><em class="not-italic italic text-pink-deep">caramu sendiri.</em></h1>
+          <p class="max-w-[420px] my-6 text-muted text-[16.5px]">Busana wanita dengan nuansa lembut dan feminin — dirancang untuk membuatmu merasa percaya diri di setiap kesempatan.</p>
+          <div class="flex gap-4 flex-wrap">
+            <button class="px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-transparent bg-pink-deep text-white transition hover:bg-[#c65b78] hover:-translate-y-0.5" onclick="goTo('shop')">
+              Belanja Sekarang
+            </button>
+            <button class="px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-ink text-ink transition hover:bg-ink hover:text-cream" onclick="goTo('newin')">Lihat New In</button>
+          </div>
+        </div>
+        <div class="relative h-[280px] md:h-[700px] order-first md:order-none">
+          <img
+            class="w-full h-full object-cover rounded-[20px] block bg-gradient-to-br from-pink-soft to-pink shadow-[0_30px_50px_-22px_rgba(217,108,137,0.4)]"
+            src="https://i.pinimg.com/736x/be/92/15/be921584b091f2941b869407e65c5926.jpg"
+            alt="Foto hero utama"
+            onerror="this.classList.add('hidden')"
+          />
+      </section>
+    </div>
+
+    <!-- Perks -->
+    <div class="border-t border-b border-line py-6 bg-white">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-8 flex justify-between flex-wrap gap-5">
+        <div class="flex gap-3 items-center text-sm text-muted">
+          <span class="text-xl text-pink-deep">🚚</span>
+          <div><b class="block text-ink text-[14.5px]">Gratis Ongkir</b>Min. belanja Rp500rb</div>
+        </div>
+        <div class="flex gap-3 items-center text-sm text-muted">
+          <span class="text-xl text-pink-deep">🔒</span>
+          <div><b class="block text-ink text-[14.5px]">Pembayaran Aman</b>Checkout terenkripsi</div>
+        </div>
+        <div class="flex gap-3 items-center text-sm text-muted">
+          <span class="text-xl text-pink-deep">↺</span>
+          <div><b class="block text-ink text-[14.5px]">Retur Mudah</b>Garansi 30 hari</div>
+        </div>
+        <div class="flex gap-3 items-center text-sm text-muted">
+          <span class="text-xl text-pink-deep">💗</span>
+          <div><b class="block text-ink text-[14.5px]">Dibuat dengan Cinta</b>Kualitas terjamin</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kategori -->
+    <section id="shop" class="max-w-[1180px] mx-auto px-5 sm:px-8 py-14 md:py-[88px]">
+      <div class="flex justify-between items-end flex-wrap gap-4 mb-10">
+        <h2 class="font-serif text-[32px] sm:text-[42px]">Belanja per Kategori</h2>
+        <p class="text-muted text-[15px] max-w-[340px]">Temukan gaya favoritmu dari berbagai koleksi pilihan.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white rounded-2xl overflow-hidden border border-line cursor-pointer transition hover:-translate-y-1.5 hover:shadow-[0_22px_40px_-22px_rgba(217,108,137,0.35)]" onclick="goTo('newin')">
+          <div class="aspect-[4/5] bg-gradient-to-br from-pink-soft to-pink"><img src="https://i.pinimg.com/1200x/cd/3f/dd/cd3fdd5fe21f6cb8a0f114392193ebeb.jpg" alt="" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" /></div>
+          <div class="px-4 py-4.5"><b class="font-serif text-[19px] block">Dress</b><span class="text-[12.5px] text-muted">Anggun & feminin</span></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden border border-line cursor-pointer transition hover:-translate-y-1.5 hover:shadow-[0_22px_40px_-22px_rgba(217,108,137,0.35)]" onclick="goTo('bestseller')">
+          <div class="aspect-[4/5] bg-[linear-gradient(160deg,#ffefe2,#f3c7a6)]"><img src="https://i.pinimg.com/1200x/5e/1b/65/5e1b6536bdfcc978230a12c09f467d62.jpg" alt="" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" /></div>
+          <div class="px-4 py-4.5"><b class="font-serif text-[19px] block">Atasan</b><span class="text-[12.5px] text-muted">Esensial harian</span></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden border border-line cursor-pointer transition hover:-translate-y-1.5 hover:shadow-[0_22px_40px_-22px_rgba(217,108,137,0.35)]" onclick="goTo('newin')">
+          <div class="aspect-[4/5] bg-[linear-gradient(160deg,#f3d9e2,#d48ca8)]"><img src="https://i.pinimg.com/736x/a3/dd/39/a3dd39d7cebefa2df20ebc686b5084f1.jpg" alt="" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" /></div>
+          <div class="px-4 py-4.5"><b class="font-serif text-[19px] block">Rok</b><span class="text-[12.5px] text-muted">Manis & santai</span></div>
+        </div>
+        <div class="bg-white rounded-2xl overflow-hidden border border-line cursor-pointer transition hover:-translate-y-1.5 hover:shadow-[0_22px_40px_-22px_rgba(217,108,137,0.35)]" onclick="goTo('bestseller')">
+          <div class="aspect-[4/5] bg-[linear-gradient(160deg,#fce7ec,#d96c89)]"><img src="https://i.pinimg.com/1200x/28/7e/bf/287ebf3e325affb9e22891db1c50b004.jpg" alt="" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" /></div>
+          <div class="px-4 py-4.5"><b class="font-serif text-[19px] block">Aksesoris</b><span class="text-[12.5px] text-muted">Sentuhan akhir</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo -->
+    <section class="max-w-[1180px] mx-auto px-5 sm:px-8 py-14 md:py-[88px]">
+      <div class="relative overflow-hidden rounded-[22px] flex items-center justify-between gap-10 flex-wrap px-6 py-9 sm:px-12 sm:py-14 bg-[linear-gradient(120deg,#f9dce3_0%,#fbefe6_100%)]">
+        <div class="absolute w-[280px] h-[280px] rounded-full border border-line -right-[70px] -top-[100px]"></div>
+        <div class="relative">
+          <div class="text-[13px] text-pink-deep font-semibold mb-2.5">FLASH SALE MINGGU INI</div>
+          <h2 class="font-serif text-[34px] sm:text-[52px] leading-none">Diskon<span class="block text-[52px] sm:text-[86px] text-pink-deep">25%</span></h2>
+          <p class="mt-3.5 text-muted max-w-[280px]">Berlaku untuk semua item New In, selama persediaan masih ada.</p>
+          <button class="mt-6 px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-transparent bg-pink-deep text-white transition hover:bg-[#c65b78] hover:-translate-y-0.5" onclick="goTo('newin')">
+            Belanja Diskon
+          </button>
+        </div>
+        <div class="relative flex gap-4">
+          <div class="w-[90px] sm:w-[110px] h-[140px] sm:h-[170px] rounded-2xl shadow-[0_20px_34px_-16px_rgba(59,42,48,0.35)] overflow-hidden bg-white">
+            <img src="https://i.pinimg.com/736x/42/9e/f1/429ef1ca02b6adad6f53ff65efa77be1.jpg" alt="Promo 1" class="w-full h-full object-contain bg-white p-2" onerror="this.classList.add('hidden')" />
+          </div>
+          <div class="w-[90px] sm:w-[110px] h-[140px] sm:h-[170px] rounded-2xl shadow-[0_20px_34px_-16px_rgba(59,42,48,0.35)] overflow-hidden bg-white translate-y-6">
+            <img src="https://i.pinimg.com/736x/97/21/4a/97214aef93adebc60517be9e81ff19ce.jpg" alt="Promo 2" class="w-full h-full object-contain bg-white p-2" onerror="this.classList.add('hidden')" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New In -->
+    <section id="newin" class="max-w-[1180px] mx-auto px-5 sm:px-8 py-14 md:py-[88px]">
+      <div class="flex justify-between items-end flex-wrap gap-4 mb-10">
+        <h2 class="font-serif text-[32px] sm:text-[42px]">New In</h2>
+        <p class="text-muted text-[15px] max-w-[340px]">Yang baru tiba minggu ini, langsung dari studio desain kami.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Celestia Bow Dress">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-pink-soft to-pink">
+            <img src="https://i.pinimg.com/1200x/68/55/a8/6855a8c0f46f2f5c38b9c6833a686fb7.jpg" alt="Blush Wrap Dress" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <span class="absolute top-3 left-3 bg-pink-deep text-white text-[11px] px-2.5 py-1 rounded-full">Baru</span>
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Blush Wrap Dress', 389000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Celestia Bow Dress</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp389.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★★ (86)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Celestia Bow Dress', 389000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Vivienne Linen Set">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#ffefe2,#f3c7a6)]">
+            <img src="https://i.pinimg.com/736x/22/23/34/22233494be4e9b883bdbd36285e16e2f.jpg" alt="Cream OneSet" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <span class="absolute top-3 left-3 bg-pink-deep text-white text-[11px] px-2.5 py-1 rounded-full">Baru</span>
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Cream Linen Set', 459000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Vivienne Linen Set</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp459.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★☆ (52)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Oneset', 459000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Wrap Skirt">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#f3d9e2,#d48ca8)]">
+            <img src="https://i.pinimg.com/736x/a3/dd/39/a3dd39d7cebefa2df20ebc686b5084f1.jpg" alt="Rose Pleated Skirt" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <span class="absolute top-3 left-3 bg-pink-deep text-white text-[11px] px-2.5 py-1 rounded-full">Baru</span>
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Rose Pleated Skirt', 299000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Wrap Skirt</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp299.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★★ (39)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Rose Pleated Skirt', 299000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Satin Cami Dress">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#fce7ec,#d96c89)]">
+            <img src="https://i.pinimg.com/1200x/cd/3f/dd/cd3fdd5fe21f6cb8a0f114392193ebeb.jpg" alt="Satin Cami Blouse" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <span class="absolute top-3 left-3 bg-pink-deep text-white text-[11px] px-2.5 py-1 rounded-full">Baru</span>
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Satin Cami Blouse', 269000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Satin Cami Dress</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp269.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★☆ (44)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Satin Cami Blouse', 269000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Seller -->
+    <section id="bestseller" class="max-w-[1180px] mx-auto px-5 sm:px-8 py-14 md:py-[88px]">
+      <div class="flex justify-between items-end flex-wrap gap-4 mb-10">
+        <h2 class="font-serif text-[32px] sm:text-[42px]">Best Seller</h2>
+        <p class="text-muted text-[15px] max-w-[340px]">Favorit pelanggan yang selalu jadi incaran.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Rose Etoile Top">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#efa3b7,#d96c89)]">
+            <img src="https://i.pinimg.com/1200x/5e/1b/65/5e1b6536bdfcc978230a12c09f467d62.jpg" alt="Floral Midi Dress" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Floral Midi Dress', 429000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Rose Etoile Top</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp429.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★★ (152)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Floral Midi Dress', 429000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Elise Corset Blouse">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#f3c7a6,#d9a46a)]">
+            <img src="https://i.pinimg.com/736x/74/f6/65/74f665727cd0a7288847fa913935d568.jpg" alt="Rose Etoile Top" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Rose Etoile Top', 379000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Elise Corset Blouse</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp379.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★☆ (98)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Elise Corset Blouse', 379000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Fleur Satin Dress">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[linear-gradient(160deg,#d48ca8,#b84964)]">
+            <img src="https://i.pinimg.com/1200x/39/d4/85/39d485efd99b4dd9ab94ce8427515ac9.jpg" alt="Satin Slip Dress" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Satin Slip Dress', 459000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Fleur Satin Dress</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp459.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★★ (140)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Fleur Satin Dress', 459000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+        <div class="prod-card [&.highlight]:outline [&.highlight]:outline-2 [&.highlight]:outline-pink-deep [&.highlight]:outline-offset-4" data-name="Colette Pink Polo">
+          <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-pink-soft to-pink">
+            <img src="https://i.pinimg.com/736x/91/fa/5b/91fa5b6b7c52170331184329f1dce0c6.jpg" alt="Knit Cardigan" onerror="this.classList.add('hidden')" class="w-full h-full object-contain bg-white p-2" />
+            <button class="prod-heart [&.active]:bg-pink-deep [&.active]:text-white absolute top-2.5 right-2.5 w-8 h-8 bg-white rounded-full flex items-center justify-center text-sm cursor-pointer border-none" onclick="toggleWishlist(this, 'Colette Pink Polo', 329000)">♡</button>
+          </div>
+          <div class="pt-3.5">
+            <b class="font-serif text-lg block">Colette Pink Polo</b>
+            <div class="text-pink-deep font-semibold mt-1">Rp329.000</div>
+            <div class="text-[12.5px] text-[#d9a64c] mt-1">★★★★☆ (67)</div>
+            <button class="mt-3 w-full bg-transparent border border-ink rounded-full py-2.5 text-[13px] font-semibold cursor-pointer transition hover:bg-ink hover:text-cream" onclick="addToCart('Knit Cardigan', 329000)">
+              Tambah ke Keranjang
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <div class="bg-pink-deep text-white">
+      <div class="max-w-[1180px] mx-auto px-5 sm:px-8 grid grid-cols-2 lg:grid-cols-4 gap-7 py-11">
+        <div class="text-[13.5px] text-[#fbe2e8]"><b class="font-serif text-xl block mb-1.5 text-white">Kualitas Premium</b>Bahan dipilih dengan teliti</div>
+        <div class="text-[13.5px] text-[#fbe2e8]"><b class="font-serif text-xl block mb-1.5 text-white">Gaya Terkini</b>Update koleksi tiap minggu</div>
+        <div class="text-[13.5px] text-[#fbe2e8]"><b class="font-serif text-xl block mb-1.5 text-white">4.9 / 5</b>Rating rata-rata pelanggan</div>
+        <div class="text-[13.5px] text-[#fbe2e8]"><b class="font-serif text-xl block mb-1.5 text-white">Dicintai Ribuan</b>Pelanggan setia di seluruh Indonesia</div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="max-w-[1180px] mx-auto px-5 sm:px-8 py-14 md:py-[88px]">
+      <div class="flex justify-between items-center gap-7 flex-wrap bg-pink-soft rounded-[22px] px-6 py-9 sm:px-12">
+        <div>
+          <h3 class="font-serif text-[28px]">Jadi yang pertama tahu</h3>
+          <p class="text-muted mt-1.5" id="newsletterMsg">Dapatkan info koleksi baru dan penawaran eksklusif.</p>
+        </div>
+        <form id="newsletterForm" class="flex max-w-[380px] w-full">
+          <input type="email" id="newsletterEmail" placeholder="Masukkan email kamu" required class="flex-1 px-4.5 py-3.5 border border-ink border-r-0 rounded-l-full bg-white font-sans" />
+          <button type="submit" class="px-6 py-3.5 bg-pink-deep text-white border-none rounded-r-full cursor-pointer text-sm font-semibold">Berlangganan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-[#d9c4ca] px-5 sm:px-8 pt-14 pb-6 text-sm">
+      <div class="max-w-[1180px] mx-auto grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-9">
+        <div>
+          <div class="font-serif text-white text-2xl mb-3.5">Blossom.</div>
+          <p class="text-[#b49ca3] max-w-[260px]">Fashion wanita dengan sentuhan lembut, untuk setiap momen berhargamu.</p>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4">Belanja</h4>
+          <ul class="list-none space-y-2.5">
+            <li><a href="#shop" class="hover:text-white">Semua Produk</a></li>
+            <li><a href="#newin" class="hover:text-white">New In</a></li>
+            <li><a href="#bestseller" class="hover:text-white">Best Seller</a></li>
+            <li>
+              <a
+                href="#"
+                onclick="
+                  goTo('newin');
+                  return false;
+                "
+                class="hover:text-white"
+                >Sale</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4">Layanan</h4>
+          <ul class="list-none space-y-2.5">
+            <li>
+              <a
+                href="#"
+                onclick="
+                  openBox('account');
+                  return false;
+                "
+                class="hover:text-white"
+                >Hubungi Kami</a
+              >
+            </li>
+            <li><a href="#" class="hover:text-white">Info Pengiriman</a></li>
+            <li><a href="#" class="hover:text-white">Retur & Penukaran</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4">Kontak</h4>
+          <ul class="list-none space-y-2.5">
+            <li>+62 812-9876-5432</li>
+            <li>hello@blossom.co.id</li>
+            <li>Jakarta, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="max-w-[1180px] mx-auto text-center border-t border-white/10 mt-12 pt-5 text-[12.5px] text-[#93777e]">© 2026 Blossom Fashion. Seluruh hak cipta dilindungi.</div>
+    </footer>
+
+    <!-- Overlay -->
+    <div class="fixed inset-0 z-[190] bg-ink/40 opacity-0 pointer-events-none transition-opacity duration-300 ease-[ease] motion-reduce:transition-none [&.show]:opacity-100 [&.show]:pointer-events-auto" id="overlay" onclick="closeAll()"></div>
+
+    <!-- Cart Drawer -->
+    <div class="fixed top-0 z-[200] -right-[400px] transition-[right] duration-[350ms] ease-[ease] motion-reduce:transition-none [&.open]:right-0 w-[380px] max-w-[92vw] h-full bg-white shadow-[-10px_0_40px_-10px_rgba(0,0,0,0.25)] flex flex-col" id="cartDrawer">
+      <div class="flex justify-between items-center px-5 py-5.5 border-b border-line">
+        <h3 class="font-serif text-[22px]">Keranjang</h3>
+        <button class="bg-transparent border-none text-[22px] cursor-pointer text-ink" onclick="closeAll()">✕</button>
+      </div>
+      <div class="flex-1 overflow-y-auto [&::-webkit-scrollbar]:hidden px-5 py-1.5" id="cartList"></div>
+      <div class="px-5 py-5 border-t border-line">
+        <div class="flex justify-between font-serif text-[21px] mb-3.5"><span>Total</span><span id="cartTotal">Rp0</span></div>
+        <button class="w-full px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-transparent bg-pink-deep text-white transition hover:bg-[#c65b78]" onclick="checkout()">Checkout</button>
+      </div>
+    </div>
+
+    <!-- Search box -->
+    <div class="z-[210] opacity-0 pointer-events-none -translate-x-1/2 -translate-y-3 transition-[opacity,transform] duration-[250ms] ease-[ease] motion-reduce:transition-none [&.show]:opacity-100 [&.show]:pointer-events-auto [&.show]:translate-y-0 fixed top-[90px] left-1/2 bg-white rounded-2xl p-6 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.3)] w-[90%] max-w-[400px]" id="searchBox">
+      <button class="absolute top-3.5 right-4 bg-transparent border-none text-lg cursor-pointer text-ink" onclick="closeAll()">✕</button>
+      <h3 class="font-serif text-[22px] mb-4">Cari Produk</h3>
+      <input type="text" id="searchInput" placeholder="Contoh: Dress, Rok, Blouse..." class="w-full px-3.5 py-3 border border-line rounded-[10px] mb-3.5 font-sans text-sm" />
+      <button class="w-full px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-transparent bg-pink-deep text-white transition hover:bg-[#c65b78]" onclick="doSearch()">Cari</button>
+    </div>
+
+    <!-- Account box -->
+    <div class="z-[210] opacity-0 pointer-events-none -translate-x-1/2 -translate-y-3 transition-[opacity,transform] duration-[250ms] ease-[ease] motion-reduce:transition-none [&.show]:opacity-100 [&.show]:pointer-events-auto [&.show]:translate-y-0 fixed top-[90px] left-1/2 bg-white rounded-2xl p-6 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.3)] w-[90%] max-w-[400px]" id="accountBox">
+      <button class="absolute top-3.5 right-4 bg-transparent border-none text-lg cursor-pointer text-ink" onclick="closeAll()">✕</button>
+      <h3 class="font-serif text-[22px] mb-4">Akun Saya</h3>
+      <div class="flex gap-2 mb-4.5">
+        <button class="flex-1 py-2.5 rounded-[10px] border border-line bg-pink-deep text-white border-pink-deep cursor-pointer font-semibold text-[13px]" id="tabLogin" onclick="switchTab('login')">Masuk</button>
+        <button class="flex-1 py-2.5 rounded-[10px] border border-line bg-transparent text-ink cursor-pointer font-semibold text-[13px]" id="tabRegister" onclick="switchTab('register')">Daftar</button>
+      </div>
+      <form id="accountForm" onsubmit="submitAccount(event)">
+        <input type="text" id="accName" placeholder="Nama" class="hidden w-full px-3.5 py-3 border border-line rounded-[10px] mb-3.5 font-sans text-sm" />
+        <input type="email" placeholder="Email" required class="w-full px-3.5 py-3 border border-line rounded-[10px] mb-3.5 font-sans text-sm" />
+        <input type="password" placeholder="Kata sandi" required class="w-full px-3.5 py-3 border border-line rounded-[10px] mb-3.5 font-sans text-sm" />
+        <button type="submit" class="w-full px-7 py-3.5 rounded-full text-[14.5px] font-semibold cursor-pointer border border-transparent bg-pink-deep text-white transition hover:bg-[#c65b78]">Masuk</button>
+      </form>
+    </div>
+
+    <!-- Wishlist box -->
+    <div class="z-[210] opacity-0 pointer-events-none -translate-x-1/2 -translate-y-3 transition-[opacity,transform] duration-[250ms] ease-[ease] motion-reduce:transition-none [&.show]:opacity-100 [&.show]:pointer-events-auto [&.show]:translate-y-0 fixed top-[90px] left-1/2 bg-white rounded-2xl p-6 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.3)] w-[90%] max-w-[400px]" id="wishlistBox">
+      <button class="absolute top-3.5 right-4 bg-transparent border-none text-lg cursor-pointer text-ink" onclick="closeAll()">✕</button>
+      <h3 class="font-serif text-[22px] mb-4">Favorit Saya</h3>
+      <div id="wishlistList"></div>
+    </div>
+
+    <div class="fixed bottom-6 left-1/2 z-[300] -translate-x-1/2 translate-y-5 opacity-0 transition-[opacity,transform] duration-300 ease-[ease] motion-reduce:transition-none [&.show]:opacity-100 [&.show]:translate-y-0 bg-ink text-white px-6 py-3.5 rounded-full text-sm whitespace-nowrap" id="toast"></div>
+
+    <script>
+      let cart = [];
+      let wishlist = [];
+      try {
+        cart = JSON.parse(localStorage.getItem("blossom_cart")) || [];
+        wishlist = JSON.parse(localStorage.getItem("blossom_wishlist")) || [];
+      } catch (e) {
+        cart = [];
+        wishlist = [];
+      }
+
+      function formatRp(n) {
+        return "Rp" + n.toLocaleString("id-ID");
+      }
+      function saveState() {
+        try {
+          localStorage.setItem("blossom_cart", JSON.stringify(cart));
+          localStorage.setItem("blossom_wishlist", JSON.stringify(wishlist));
+        } catch (e) {}
+      }
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(t._timer);
+        t._timer = setTimeout(() => t.classList.remove("show"), 2200);
+      }
+      function goTo(id) {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function closeAll() {
+        document.getElementById("overlay").classList.remove("show");
+        document.getElementById("cartDrawer").classList.remove("open");
+        ["searchBox", "accountBox", "wishlistBox"].forEach((id) => document.getElementById(id).classList.remove("show"));
+      }
+      function openBox(which) {
+        closeAll();
+        document.getElementById("overlay").classList.add("show");
+        if (which === "wishlist") {
+          renderWishlist();
+          document.getElementById("wishlistBox").classList.add("show");
+        } else if (which === "search") {
+          document.getElementById("searchBox").classList.add("show");
+          setTimeout(() => document.getElementById("searchInput").focus(), 200);
+        } else if (which === "account") {
+          document.getElementById("accountBox").classList.add("show");
+        }
+      }
+      function openCart() {
+        document.getElementById("overlay").classList.add("show");
+        document.getElementById("cartDrawer").classList.add("open");
+        renderCart();
+      }
+
+      function addToCart(name, price) {
+        const existing = cart.find((i) => i.name === name);
+        if (existing) {
+          existing.qty++;
+        } else {
+          cart.push({ name, price, qty: 1 });
+        }
+        saveState();
+        updateBadges();
+        showToast(name + " ditambahkan ke keranjang");
+      }
+      function changeQty(name, delta) {
+        const item = cart.find((i) => i.name === name);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) cart = cart.filter((i) => i.name !== name);
+        saveState();
+        renderCart();
+        updateBadges();
+      }
+      function removeFromCart(name) {
+        cart = cart.filter((i) => i.name !== name);
+        saveState();
+        renderCart();
+        updateBadges();
+      }
+      function renderCart() {
+        const list = document.getElementById("cartList");
+        if (cart.length === 0) {
+          list.innerHTML = '<div class="text-center text-muted py-16 px-5 text-[14.5px]">Keranjangmu masih kosong.<br>Yuk mulai belanja ✨</div>';
+        } else {
+          list.innerHTML = cart
+            .map(
+              (i) => `
+      <div class="flex gap-3 py-4 border-b border-line items-start">
+        <div class="w-[54px] h-[68px] rounded-lg flex-shrink-0 bg-[linear-gradient(160deg,#F9DCE3,#EFA3B7)]"></div>
+        <div class="flex-1">
+          <b class="font-serif text-base block">${i.name}</b>
+          <div class="text-pink-deep font-semibold text-sm mt-0.5">${formatRp(i.price)}</div>
+          <div class="flex items-center gap-2.5 mt-2">
+            <button class="w-6 h-6 rounded-full border border-ink bg-transparent cursor-pointer text-sm leading-none" onclick="changeQty('${i.name}',-1)">−</button>
+            <span>${i.qty}</span>
+            <button class="w-6 h-6 rounded-full border border-ink bg-transparent cursor-pointer text-sm leading-none" onclick="changeQty('${i.name}',1)">+</button>
+          </div>
+          <button class="bg-transparent border-none text-muted cursor-pointer text-[12.5px] underline mt-2" onclick="removeFromCart('${i.name}')">Hapus</button>
+        </div>
+      </div>`,
+            )
+            .join("");
+        }
+        const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+        document.getElementById("cartTotal").textContent = formatRp(total);
+      }
+      function updateBadges() {
+        const cartCount = cart.reduce((s, i) => s + i.qty, 0);
+        const cartBadge = document.getElementById("cartBadge");
+        cartBadge.textContent = cartCount;
+        cartBadge.classList.toggle("hidden", cartCount === 0);
+        cartBadge.classList.toggle("flex", cartCount > 0);
+
+        const wishBadge = document.getElementById("wishBadge");
+        wishBadge.textContent = wishlist.length;
+        wishBadge.classList.toggle("hidden", wishlist.length === 0);
+        wishBadge.classList.toggle("flex", wishlist.length > 0);
+      }
+      function checkout() {
+        if (cart.length === 0) {
+          showToast("Keranjang masih kosong");
+          return;
+        }
+        showToast("Pesanan berhasil dibuat! Terima kasih 💗");
+        cart = [];
+        saveState();
+        renderCart();
+        updateBadges();
+        closeAll();
+      }
+
+      function toggleWishlist(btn, name, price) {
+        const idx = wishlist.findIndex((i) => i.name === name);
+        if (idx > -1) {
+          wishlist.splice(idx, 1);
+          btn.classList.remove("active");
+          btn.textContent = "♡";
+          showToast(name + " dihapus dari favorit");
+        } else {
+          wishlist.push({ name, price });
+          btn.classList.add("active");
+          btn.textContent = "♥";
+          showToast(name + " ditambahkan ke favorit");
+        }
+        saveState();
+        updateBadges();
+      }
+      function renderWishlist() {
+        const el = document.getElementById("wishlistList");
+        if (wishlist.length === 0) {
+          el.innerHTML = '<div class="text-muted text-sm text-center py-5">Belum ada favorit tersimpan.</div>';
+          return;
+        }
+        el.innerHTML = wishlist
+          .map(
+            (i) => `
+    <div class="flex justify-between items-center py-2.5 border-b border-line text-sm">
+      <span>${i.name} — ${formatRp(i.price)}</span>
+      <button class="bg-transparent border-none text-pink-deep font-semibold cursor-pointer text-[13px]" onclick="addToCart('${i.name}',${i.price});showToast('${i.name} masuk ke keranjang')">+ Keranjang</button>
+    </div>`,
+          )
+          .join("");
+      }
+
+      document.getElementById("searchInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          doSearch();
+        }
+      });
+
+      function doSearch() {
+        const q = document.getElementById("searchInput").value.trim().toLowerCase();
+        document.querySelectorAll(".prod-card").forEach((c) => c.classList.remove("highlight"));
+        if (!q) {
+          closeAll();
+          return;
+        }
+        const words = q.split(/\s+/);
+        const cards = Array.from(document.querySelectorAll(".prod-card"));
+        // Cocokkan dengan judul yang tampil di kartu (bukan hanya data-name), plus nama lain sebagai cadangan
+        const match = cards.find((c) => {
+          const text = [c.querySelector("b")?.textContent, c.dataset.name, c.querySelector("img")?.alt].join(" ").toLowerCase();
+          return words.every((w) => text.includes(w));
+        });
+        closeAll();
+        if (match) {
+          match.scrollIntoView({ behavior: "smooth", block: "center" });
+          match.classList.add("highlight");
+          setTimeout(() => match.classList.remove("highlight"), 2200);
+          showToast('Menampilkan hasil untuk "' + q + '"');
+        } else {
+          showToast('Produk "' + q + '" tidak ditemukan');
+        }
+      }
+
+      function switchTab(tab) {
+        const login = document.getElementById("tabLogin");
+        const register = document.getElementById("tabRegister");
+        const activeCls = ["bg-pink-deep", "text-white", "border-pink-deep"];
+        const idleCls = ["bg-transparent", "text-ink"];
+        const [on, off] = tab === "login" ? [login, register] : [register, login];
+        on.classList.add(...activeCls);
+        on.classList.remove(...idleCls);
+        off.classList.remove(...activeCls);
+        off.classList.add(...idleCls);
+        document.getElementById("accName").classList.toggle("hidden", tab !== "register");
+        document.querySelector("#accountForm button[type=submit]").textContent = tab === "login" ? "Masuk" : "Daftar";
+      }
+      function submitAccount(e) {
+        e.preventDefault();
+        showToast("Berhasil! Selamat datang di Blossom 💗");
+        closeAll();
+        e.target.reset();
+      }
+
+      document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = document.getElementById("newsletterEmail").value;
+        document.getElementById("newsletterMsg").textContent = "Terima kasih! " + email + " telah berlangganan.";
+        e.target.reset();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeAll();
+      });
+
+      updateBadges();
+    </script>
+  </body>
+</html>
